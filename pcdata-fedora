@@ -1,19 +1,19 @@
 #!/bin/bash
 
-pcdata - Displays detailed hardware information, similar to CPU-Z
-Copyright (C) 2026 Jedielson da Fonseca
+#pcdata - Displays detailed hardware information, similar to CPU-Z
+#Copyright (C) 2026 Jedielson da Fonseca
 
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License version 3 as
-published by the Free Software Foundation.
+#This program is free software: you can redistribute it and/or modify
+#it under the terms of the GNU General Public License version 3 as
+#published by the Free Software Foundation.
 
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
+#This program is distributed in the hope that it will be useful,
+#but WITHOUT ANY WARRANTY; without even the implied warranty of
+#MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#GNU General Public License for more details.
 
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <https://www.gnu.org/licenses/>.
+#You should have received a copy of the GNU General Public License
+#along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 export LC_ALL=C
 
@@ -399,7 +399,7 @@ main_section () {
         echo -e "$MYDISKS"
 
 
-        echo -e "\n${yellow}Run \"./pcdata.sh --help\" for dependencies and more information on how to use it.${nocolor}"
+        echo -e "\n${yellow}Run \"pcdata --help\" for dependencies and more information on how to use it.${nocolor}"
 
 }
 
