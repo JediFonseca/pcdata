@@ -29,7 +29,7 @@ CPU temperature, clock speed, and multiplier.
 # Nothing to build, this is a shell script.
 
 %install
-install -Dm755 pcdata %{buildroot}%{_bindir}/pcdata
+install -Dm755 pcdata %{buildroot}%{_bindir}/pcdata-fedora
 
 %files
 %{_bindir}/pcdata
