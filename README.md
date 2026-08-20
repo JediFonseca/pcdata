@@ -8,3 +8,54 @@ Simple shell script to show software and hardware information on Linux.
 
 <img width="610" height="690" alt="Captura_de_tela_20260412_144058" src="https://github.com/user-attachments/assets/423475dc-5eeb-49bd-b4fe-12d1fbab5443" />
 
+# PC Data
+
+## How to install
+
+1. Add the *copr* repository to your system:
+
+```
+ dnf copr enable jedifonseca/pcdata
+```
+
+2. Install *pcdata*
+
+```
+sudo dnf install pcdata
+```
+
+All the dependencies *pcdata* needs will be installed with it.
+
+**List of dependencies:**
+- dmidecode
+- util-linux
+- lm_sensors
+- pciutils
+- upower
+- xrandr
+
+## How to use
+
+For the basic/general system information:
+
+```
+pcdata
+```
+
+For information about the CPU:
+
+```
+pcdata --cpu
+```
+
+For information about the RAM modules:
+
+```
+pcdata --ram
+```
+
+For the *help* section:
+
+```
+pcdata --help
+```
