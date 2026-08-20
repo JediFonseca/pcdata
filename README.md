@@ -10,12 +10,12 @@ Simple shell script to show software and hardware information on Linux.
 
 # PC Data
 
-## How to install
+## How to install (On Fedora 44 via COPR)
 
 1. Add the *copr* repository to your system:
 
 ```
- dnf copr enable jedifonseca/pcdata
+sudo dnf copr enable jedifonseca/pcdata
 ```
 
 2. Install *pcdata*
@@ -26,13 +26,16 @@ sudo dnf install pcdata
 
 All the dependencies *pcdata* needs will be installed with it.
 
-**List of dependencies:**
+**List of dependencies: (Based on Fedora 44)**
 - dmidecode
 - util-linux
 - lm_sensors
 - pciutils
 - upower
 - xrandr
+
+*On other distros, for now, you'll have to comment the "safety_checks" line, at the end of the file,
+and run "./pcdata-fedora" directly. Be sure to have all the dependencies installed.*
 
 ## How to use
 
