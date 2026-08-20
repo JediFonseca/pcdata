@@ -2,6 +2,7 @@
 
 #pcdata - Displays detailed hardware information, similar to CPU-Z
 #Copyright (C) 2026 Jedielson da Fonseca
+#Contact: jedifn7@gmail.com
 
 #This program is free software: you can redistribute it and/or modify
 #it under the terms of the GNU General Public License version 3 as
@@ -78,8 +79,6 @@ clear
     echo -e "\n${blue}DEPENDENCIES:${nocolor}"
     echo -e "${blue}For this script to work properly, you'll need the following packages:${nocolor}"
     echo -e "dmidecode, lm_sensors, util-linux, xrandr, upower and pciutils. (Package names based on Fedora 44.)"
-    echo "All of them are default on many distros, including Debian, but you may need to"
-    echo "install some of them manually, specially in more minimalistic distros."
 
 }
 
