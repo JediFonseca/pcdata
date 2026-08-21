@@ -399,10 +399,11 @@ local MYDISKS=$(df -h --output=source,used,size,pcent,target,fstype | grep "^/de
 local MYMONITORS=$(xrandr --query 2>/dev/null | awk -v color="$blue" -v \
     nc="$nocolor" '/ connected/ {p=$1} /\*/ {res=$1; freq=$2; gsub(/[*+]/, "", \
     freq); printf "%s%s:%s %s @ %sHz\n", color, p, nc, res, freq}')
-local MYIP=$(ip -br addr show | grep UP | awk '{print $3}' | cut -d/ -f1)
 local VIDEODRIVER=$(lspci -k | grep -EiA 3 "vga|video|3d" | grep "in use" | sed 's/.*: //')
 local IFBAT=$(upower -i $(upower -e 2>/dev/null | grep 'BAT') 2>/dev/null | grep 'percentage' | awk '{print $2}')
 local USBDEV=$(lsusb)
+local MAINLOCALIP=$(ip route get 1 | awk '{print $7; exit}')
+local TAILSCALEIP=$(tailscale ip 2> /dev/null | head -n1)
 
 # Formatting output
 clear
@@ -420,8 +421,9 @@ echo -e "${blue}Total swap:${nocolor} $TOTALSWAP"
 echo -e "${blue}GPU:${nocolor} $GPUNAME"
 echo -e "${blue}Video driver in use:${nocolor} $VIDEODRIVER"
 echo -e "$MYMONITORS"
-echo -e "${blue}Local IP:${nocolor} $MYIP"
 [[ -n "$IFBAT" ]] && echo -e "${blue}Battery percentage:${nocolor} $IFBAT"
+echo -e "${blue}Local IP:${nocolor} $MAINLOCALIP"
+[[ -n "$TAILSCALEIP" ]] && echo -e "${blue}Tailscale IP:${nocolor} $TAILSCALEIP"
 echo -e "$MYDISKS"
         
 echo -e "\n${blue}Connected USB devices:${nocolor}"
