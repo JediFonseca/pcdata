@@ -2,14 +2,6 @@
 
 Simple shell script to show software and hardware information on Linux.
 
-<img width="739" height="557" alt="Captura_de_tela_20260412_143357" src="https://github.com/user-attachments/assets/92577e06-b153-4ee3-bf3a-d7b265d368e7" />
-
-<img width="635" height="647" alt="Captura_de_tela_20260412_144024" src="https://github.com/user-attachments/assets/eae7f204-df7f-4d0a-917a-417ac03d05c3" />
-
-<img width="610" height="690" alt="Captura_de_tela_20260412_144058" src="https://github.com/user-attachments/assets/423475dc-5eeb-49bd-b4fe-12d1fbab5443" />
-
-# PC Data
-
 ## How to install (On Fedora 44 via COPR)
 
 1. Add the *copr* repository to your system:
@@ -57,8 +49,32 @@ For information about the RAM modules:
 pcdata --ram
 ```
 
+For information about the GPU:
+
+```
+pcdata --gpu
+```
+
+For all the realtime information about the CPU, GPU and RAM:
+
+```
+pcdata --now
+```
+
 For the *help* section:
 
 ```
 pcdata --help
 ```
+
+## Prints
+
+<img width="824" height="767" alt="Captura de tela de 2026-08-21 02-15-34" src="https://github.com/user-attachments/assets/aed3ab22-7774-4e0f-8c83-45d108d9f058" />
+
+<img width="710" height="657" alt="Captura de tela de 2026-08-21 02-15-53" src="https://github.com/user-attachments/assets/26d6b32e-8af4-47f0-899f-e202be487676" />
+
+<img width="710" height="753" alt="Captura de tela de 2026-08-21 02-16-05" src="https://github.com/user-attachments/assets/253a45bf-ec06-45e6-a7fd-5271b24fa003" />
+
+<img width="735" height="407" alt="Captura de tela de 2026-08-21 02-16-20" src="https://github.com/user-attachments/assets/ff92312c-9bff-4ee0-98ae-2388a719a559" />
+
+<img width="611" height="443" alt="Captura de tela de 2026-08-21 02-16-35" src="https://github.com/user-attachments/assets/75c19d01-a445-4049-837d-87caa05783e5" />
