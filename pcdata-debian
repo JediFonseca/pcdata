@@ -18,6 +18,10 @@
 
 export LC_ALL=C
 
+if [[ ":$PATH:" != *":/usr/sbin:"* ]]; then
+    PATH="/usr/sbin:/usr/bin:/sbin:/bin:$PATH"
+fi
+
 # Variables ----------------------------------------------------------------------#
 
 green='\033[0;32m'
@@ -420,7 +424,7 @@ echo -e "${blue}Total RAM:${nocolor} $TOTALRAM"
 echo -e "${blue}Total swap:${nocolor} $TOTALSWAP"
 echo -e "${blue}GPU:${nocolor} $GPUNAME"
 echo -e "${blue}Video driver in use:${nocolor} $VIDEODRIVER"
-echo -e "$MYMONITORS"
+[[ -n "$MYMONITORS" ]] && echo -e "$MYMONITORS"
 [[ -n "$IFBAT" ]] && echo -e "${blue}Battery percentage:${nocolor} $IFBAT"
 echo -e "${blue}Local IP:${nocolor} $MAINLOCALIP"
 [[ -n "$TAILSCALEIP" ]] && echo -e "${blue}Tailscale IP:${nocolor} $TAILSCALEIP"
