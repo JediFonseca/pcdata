@@ -26,6 +26,8 @@ All the dependencies *pcdata* needs will be installed with it.
 - upower
 - xrandr
 
+*For Debian based distros, just download and run "./pcdata-debian".*
+
 *On other distros, for now, you'll have to comment the "safety_checks" line, at the end of the file,
 and run "./pcdata-fedora" directly. Be sure to have all the dependencies installed.*
 
