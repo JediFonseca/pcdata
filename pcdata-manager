@@ -12,6 +12,7 @@ pcdata_update () {
 
 echo -e "${yellow}\nDownloading and installing the new PCData version...${nocolor}"
 wget -q -O "$pcdata_path" "$pcdata_url"
+chmod +x "$pcdata_path"
 echo -e "${green}\nPCData is updated!\n${nocolor}"
 
 }
