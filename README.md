@@ -93,9 +93,8 @@ Completely uninstalls PCData.
 
 ## Prints
 
-<img width="611" height="443" alt="Captura de tela de 2026-08-21 02-16-35" src="https://github.com/user-attachments/assets/c376da7b-05cf-4f34-82a8-770ced958bd5" />
-<img width="735" height="407" alt="Captura de tela de 2026-08-21 02-16-20" src="https://github.com/user-attachments/assets/4c390775-e7c1-43d2-95d4-5890c7aae676" />
-<img width="710" height="753" alt="Captura de tela de 2026-08-21 02-16-05" src="https://github.com/user-attachments/assets/de0c7f9a-d6b2-46d1-8069-c594b85bbdbd" />
-<img width="710" height="657" alt="Captura de tela de 2026-08-21 02-15-53" src="https://github.com/user-attachments/assets/69a15911-4cb3-45fc-b1f9-bca70822da56" />
 <img width="824" height="767" alt="Captura de tela de 2026-08-21 02-15-34" src="https://github.com/user-attachments/assets/39a9f61c-7e52-4a12-990d-a8cb7638d84e" />
-
+<img width="710" height="657" alt="Captura de tela de 2026-08-21 02-15-53" src="https://github.com/user-attachments/assets/69a15911-4cb3-45fc-b1f9-bca70822da56" />
+<img width="710" height="753" alt="Captura de tela de 2026-08-21 02-16-05" src="https://github.com/user-attachments/assets/de0c7f9a-d6b2-46d1-8069-c594b85bbdbd" />
+<img width="735" height="407" alt="Captura de tela de 2026-08-21 02-16-20" src="https://github.com/user-attachments/assets/4c390775-e7c1-43d2-95d4-5890c7aae676" />
+<img width="611" height="443" alt="Captura de tela de 2026-08-21 02-16-35" src="https://github.com/user-attachments/assets/c376da7b-05cf-4f34-82a8-770ced958bd5" />
