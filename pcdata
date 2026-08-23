@@ -647,7 +647,7 @@ done
 
 pcdata_update () {
 
-exec /usr/bin/pcdata-manager --update
+exec sudo /usr/bin/pcdata-manager --update
 
 }
 
@@ -655,7 +655,7 @@ exec /usr/bin/pcdata-manager --update
 
 pcdata_uninstall () {
 
-exec /usr/bin/pcdata-manager --uninstall
+exec sudo /usr/bin/pcdata-manager --uninstall
 
 }
 
