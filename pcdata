@@ -30,7 +30,7 @@ yellow='\033[1;33m'
 red='\033[0;31m'
 nocolor='\033[0m'
 
-version="1.1"
+version="1.2"
 pcdata_url="https://raw.githubusercontent.com/JediFonseca/pcdata/refs/heads/main/pcdata"
 
 local_version=$(grep "^version=" "$0")
@@ -376,7 +376,7 @@ local TOTALSWAP=$(free -h | awk '/^Swap:/ {print $2}')
 local MYDISKS=$(df -h --output=source,used,size,pcent,target,fstype | grep "^/dev/" \
 | sed 's/  */,/g; s/,fuseblk/,ntfs/g; s/,ntfs3/,ntfs/g' \
 | awk -v color="$blue" -v nc="$nocolor" -F, \
-'{printf "%sDisk (%s):%s %s / %s (%s) em %s [%s]\n", color, $1, nc, $2, $3, $4, $5, $6}')
+'{printf "%sDisk (%s):%s %s / %s (%s) at %s [%s]\n", color, $1, nc, $2, $3, $4, $5, $6}')
 local MYMONITORS=$(xrandr --query 2>/dev/null | awk -v color="$blue" -v \
 nc="$nocolor" '/ connected/ {p=$1} /\*/ {res=$1; freq=$2; gsub(/[*+]/, "", \
 freq); printf "%s%s:%s %s @ %sHz\n", color, p, nc, res, freq}')
