@@ -34,8 +34,8 @@ version="1.0"
 installation_path="/usr/bin/pcdata"
 pcdata_url="https://raw.githubusercontent.com/JediFonseca/pcdata/refs/heads/main/pcdata"
 
-local_version=$(grep "version=" $installation_path)
-remote_version=$(curl -s "$pcdata_url" | grep "version=")
+local_version=$(grep "^version=" $installation_path)
+remote_version=$(curl -s --max-time 2 "$pcdata_url" 2>/dev/null | grep "version=")
 
 # Function 01 --------------------------------------------------------------------#
 
@@ -58,7 +58,7 @@ echo -e "--uninstall: for uninstalling PCData completely."
 echo
 echo -e "${blue}DEPENDENCIES:${nocolor}"
 echo -e "${blue}For this script to work properly, you'll need the following packages:${nocolor}"
-echo -e "dmidecode, lm_sensors, util-linux, xrandr, upower and pciutils. (Package names based on Fedora 44.)"
+echo -e "dmidecode, lm_sensors, util-linux, xrandr, curl, upower and pciutils. (Package names based on Fedora 44.)"
 
 }
 
@@ -407,6 +407,7 @@ echo -e "$MYDISKS"
 echo -e "\n${blue}Connected USB devices:${nocolor}"
 echo "$USBDEV"
 
+[[ "$local_version" != "$remote_version" ]] && echo -e "\n${yellow}An update is available! Run 'pcdata --update' to install it.${nocolor}\n"
 
 echo -e "\n${yellow}Run \"pcdata --help\" for dependencies and more information on how to use it.${nocolor}"
 
