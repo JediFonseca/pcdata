@@ -147,7 +147,7 @@ if [[ $distroid == "arch" ]]; then
 
 	echo -e "${yellow}Installing the dependencies with \"pacman\".\n${nocolor}"
 	echo
-	pacman -Sy --noconfirm "${!arch_dependencies_list[@]}"
+	pacman -Syu --noconfirm "${!arch_dependencies_list[@]}"
 		
 fi
 
