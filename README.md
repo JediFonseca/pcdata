@@ -62,9 +62,10 @@ Displays detailed RAM information, including information for each memory slot.
 ```bash
 pcdata --gpu
 ```
-*Dual GPU is currently unsupported.*
 
 Displays detailed GPU information and realtime GPU data.
+
+*Dual GPU is currently unsupported.*
 
 ---
 
