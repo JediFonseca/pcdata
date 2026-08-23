@@ -41,17 +41,23 @@ pcdata --help
 
 Displays usage information and the required dependencies.
 
+---
+
 ```bash
 pcdata --cpu
 ```
 
 Displays detailed CPU information, including realtime CPU data.
 
+---
+
 ```bash
 pcdata --ram
 ```
 
 Displays detailed RAM information, including information for each memory slot.
+
+---
 
 ```bash
 pcdata --gpu
@@ -60,11 +66,15 @@ pcdata --gpu
 
 Displays detailed GPU information and realtime GPU data.
 
+---
+
 ```bash
 pcdata --now
 ```
 
 Displays realtime CPU, RAM, swap, and GPU information together.
+
+---
 
 ```bash
 pcdata --update
@@ -72,20 +82,10 @@ pcdata --update
 
 Updates PCData to the latest available version.
 
+---
+
 ```bash
 pcdata --uninstall
 ```
 
 Completely uninstalls PCData.
-
-### Exiting realtime modes
-
-The `--cpu`, `--ram`, `--gpu`, and `--now` modes continuously update the displayed information.
-
-Press:
-
-```bash
-CTRL+C
-```
-
-to exit.
