@@ -1,0 +1,31 @@
+#!/bin/bash
+
+green='\033[0;32m'
+yellow='\033[1;33m'
+nocolor='\033[0m'
+
+pcdata_url="https://raw.githubusercontent.com/JediFonseca/pcdata/refs/heads/main/pcdata"
+pcdata_path="/usr/bin/pcdata"
+manager_path="/usr/bin/pcdata_manager"
+
+pcdata_update () {
+
+echo -e "${yellow}\nDownloading and installing the new PCData version...${nocolor}"
+wget -q -O "$pcdata_path" "$pcdata_url"
+echo -e "${green}\nPCData is updated!\n${nocolor}"
+
+}
+
+pcdata_uninstall () {
+
+echo -e "${yellow}\nUninstalling PCData...${nocolor}"
+rm -f "$pcdata_path" &> /dev/null
+rm -f "$manager_path" &> /dev/null
+echo -e "${green}\nPCData is uninstalled!\n${nocolor}"
+
+}
+
+case "$1" in
+    "--uninstall")	pcdata_uninstall		;;
+    "--update")		pcdata_update		;;
+esac
