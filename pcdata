@@ -407,7 +407,7 @@ echo -e "$MYDISKS"
 echo -e "\n${blue}Connected USB devices:${nocolor}"
 echo "$USBDEV"
 
-[[ -n "$remote_version" ]] && [[ "$local_version" != "$remote_version" ]] && echo -e\
+[[ -n "$remote_version" ]] && [[ "$local_version" != "$remote_version" ]] && echo -e \
 "\n${yellow}An update is available! Run 'pcdata --update' to install it.${nocolor}\n"
 
 echo -e "\n${yellow}Run \"pcdata --help\" for dependencies and more information on how to use it.${nocolor}"
