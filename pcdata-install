@@ -156,8 +156,8 @@ fi
 
 download_scripts () {
 
-wget --show-progress -O "$pcdata_location" "$pcdata_url"
-wget --show-progress -O "$pcdata_manager_location" "$pcdata_manager_url"
+wget --show-progress -O "$pcdata_location" "$pcdata_url" || { echo "pcdata download failed! Check your connection."; exit 1; }
+wget --show-progress -O "$pcdata_manager_location" "$pcdata_manager_url" || { echo "pcdata-manager download failed! Check your connection."; exit 1; }
 
 }
 
