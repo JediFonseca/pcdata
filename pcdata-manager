@@ -6,7 +6,7 @@ nocolor='\033[0m'
 
 pcdata_url="https://raw.githubusercontent.com/JediFonseca/pcdata/refs/heads/main/pcdata"
 pcdata_path="/usr/bin/pcdata"
-manager_path="/usr/bin/pcdata_manager"
+manager_path="/usr/bin/pcdata-manager"
 
 pcdata_update () {
 
