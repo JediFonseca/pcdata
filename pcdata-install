@@ -11,8 +11,8 @@ nocolor='\033[0m'
 pcdata_location="/usr/bin/pcdata"
 pcdata_manager_location="/usr/bin/pcdata-manager"
 
-pcdata_url=""
-pcdata_manager_url=""
+pcdata_url="https://raw.githubusercontent.com/JediFonseca/pcdata/refs/heads/main/pcdata"
+pcdata_manager_url="https://raw.githubusercontent.com/JediFonseca/pcdata/refs/heads/main/pcdata-manager"
 
 # Safety --------------------------------------------------------------------------------#
 
@@ -34,6 +34,7 @@ declare -A debian_dependencies_list=(
 ["procps"]="Procps"
 ["iproute2"]="IP Route"
 ["usbutils"]="USB Utils"
+["curl"]="curl"
 
 )
 
@@ -54,6 +55,7 @@ declare -A fedora_dependencies_list=(
 ["procps-ng"]="Procps NG"
 ["iproute"]="IP Route"
 ["usbutils"]="USB Utils"
+["curl"]="curl"
 
 )
 
