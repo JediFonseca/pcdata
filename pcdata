@@ -35,7 +35,7 @@ installation_path="/usr/bin/pcdata"
 pcdata_url="https://raw.githubusercontent.com/JediFonseca/pcdata/refs/heads/main/pcdata"
 
 local_version=$(grep "^version=" $installation_path)
-remote_version=$(curl -s --max-time 2 "$pcdata_url" 2>/dev/null | grep "version=")
+remote_version=$(curl -s --max-time 2 "$pcdata_url" 2>/dev/null | grep "^version=")
 
 # Function 01 --------------------------------------------------------------------#
 
