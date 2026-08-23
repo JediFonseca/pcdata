@@ -23,9 +23,7 @@ The installer will:
 
 ### Distribution support
 
-PCData currently supports Debian/Ubuntu-based and Fedora-based systems.
-
-> **Warning:** Arch-based distribution support is still under development.
+PCData currently supports Debian/Ubuntu-based, Arch-based and Fedora-based systems.
 
 ## Usage
 
