@@ -31,6 +31,11 @@ red='\033[0;31m'
 nocolor='\033[0m'
 
 version="1.0"
+installation_path="/usr/bin/pcdata"
+pcdata_url="https://raw.githubusercontent.com/JediFonseca/pcdata/refs/heads/main/pcdata"
+
+local_version=$(grep "version=" $installation_path)
+remote_version=$(curl -s "$pcdata_url" | grep "version=")
 
 # Function 01 --------------------------------------------------------------------#
 
@@ -47,8 +52,11 @@ echo -e "--cpu: for advanced CPU information."
 echo -e "--ram: for advanced RAM information."
 echo -e "--gpu: for advanced GPU information."
 echo -e "--now: for all realtime information."
-
-echo -e "\n${blue}DEPENDENCIES:${nocolor}"
+echo -e "--update: for updating PCData to the latest version."
+echo -e "--uninstall: for uninstalling PCData completely."
+[[ "$local_version" != "$remote_version" ]] && echo -e "\n${yellow}An update is available! Run 'pcdata --update' to install it.${nocolor}"
+echo
+echo -e "${blue}DEPENDENCIES:${nocolor}"
 echo -e "${blue}For this script to work properly, you'll need the following packages:${nocolor}"
 echo -e "dmidecode, lm_sensors, util-linux, xrandr, upower and pciutils. (Package names based on Fedora 44.)"
 
@@ -634,15 +642,31 @@ done
 
 }
 
+# Function 10 --------------------------------------------------------------------#
+
+pcdata_update () {
+
+exec /usr/bin/pcdata-manager --update
+
+}
+
+# Function 11 --------------------------------------------------------------------#
+
+pcdata_uninstall () {
+
+exec /usr/bin/pcdata-manager --uninstall
+
+}
+
 # Execution ----------------------------------------------------------------------#
 
-safety_checks
-
 case "$1" in
-    "--help")	help_section			;;
-    "--cpu")		cpu_section			;;
-	"--ram")		ram_section			;;
-	"--gpu")		gpu_section			;;
-	"--now")		realtime_section		;;
-    *)			main_section			;;
+    "--help")		help_section			;;
+    "--cpu")			cpu_section			;;
+	"--ram")			ram_section			;;
+	"--gpu")			gpu_section			;;
+	"--now")			realtime_section		;;
+	"--update")		pcdata_update		;;
+	"--uninstall")	pcdata_uninstall		;;
+    *)				main_section			;;
 esac
