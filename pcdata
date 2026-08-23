@@ -31,7 +31,6 @@ red='\033[0;31m'
 nocolor='\033[0m'
 
 version="1.0"
-installation_path="/usr/bin/pcdata"
 pcdata_url="https://raw.githubusercontent.com/JediFonseca/pcdata/refs/heads/main/pcdata"
 
 local_version=$(grep "^version=" "$0")
