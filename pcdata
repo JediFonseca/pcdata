@@ -59,6 +59,9 @@ echo
 echo -e "${blue}DEPENDENCIES:${nocolor}"
 echo -e "${blue}For this script to work properly, you'll need the following packages:${nocolor}"
 echo -e "dmidecode, lm_sensors, util-linux, xrandr, curl, upower and pciutils. (Package names based on Fedora 44.)"
+echo
+echo "Version: $version"
+echo
 
 }
 
