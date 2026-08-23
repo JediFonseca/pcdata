@@ -40,7 +40,16 @@ declare -A debian_dependencies_list=(
 
 declare -A arch_dependencies_list=(
 
-[""]=""
+["dmidecode"]="DMI Decode"
+["util-linux"]="Util Linux"
+["lm_sensors"]="LM Sensors"
+["pciutils"]="PCI Utils"
+["upower"]="UPower"
+["xorg-xrandr"]="xrandr"
+["procps-ng"]="Procps NG"
+["iproute2"]="IP Route"
+["usbutils"]="USB Utils"
+["curl"]="curl"
 
 )
 
