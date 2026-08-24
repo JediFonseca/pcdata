@@ -27,7 +27,6 @@ tmux new-window -t "$session" -n "EXIT" "read -n1 -s -r -p 'Press any key to exi
 # Activates mouse interaction and set the tabs bar to the top.
 tmux set -g mouse on
 tmux set -g status-position top
-tmux set-option -t "$session" destroy-unattached on
 
 # Set the custom config file location.
 config_file="/usr/share/pcdata.tmux.conf"
