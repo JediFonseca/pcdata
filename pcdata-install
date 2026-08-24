@@ -29,7 +29,7 @@ pcdata_manager_location="/usr/bin/pcdata-manager"
 pcdata_location="/usr/bin/pcdata"
 tmux_config_location="/usr/share/pcdata.tmux.conf"
 
-tmux_config_url="https://github.com/JediFonseca/pcdata/blob/main/pcdata.tmux.conf"
+tmux_config_url="https://raw.githubusercontent.com/JediFonseca/pcdata/refs/heads/main/pcdata.tmux.conf"
 pcdata_main_url="https://raw.githubusercontent.com/JediFonseca/pcdata/refs/heads/main/pcdata-main"
 pcdata_manager_url="https://raw.githubusercontent.com/JediFonseca/pcdata/refs/heads/main/pcdata-manager"
 pcdata_url="https://raw.githubusercontent.com/JediFonseca/pcdata/refs/heads/main/pcdata"
