@@ -22,11 +22,13 @@ tmux new-window -t "$session" -n "NOW" "pcdata-main --now"
 tmux new-window -t "$session" -n "HELP" "pcdata-main --help; while true; do sleep 3600; done"
 tmux new-window -t "$session" -n "UPDATE" "read -n1 -s -r -p 'Press any key to update PCData...'; echo; pcdata-main --update; while true; do sleep 3600; done"
 tmux new-window -t "$session" -n "UNINSTALL" "read -n1 -s -r -p 'Press any key to uninstall PCData...'; echo; pcdata-main --uninstall; tmux kill-session -t $session"
-tmux new-window -t "$session" -n "EXIT" "read -n1 -s -r -p 'Press any key to exit PCData...'; tmux kill-session -t $session"
+tmux new-window -d -t "$session" -n "EXIT"
 
 # Activates mouse interaction and set the tabs bar to the top.
 tmux set -g mouse on
+tmux set-hook -t "$session" after-select-window 'if-shell "[[ \"#{hook_window_name}\" == \"EXIT\" ]]" "kill-session -t \"$session\""'
 tmux set -g status-position top
+tmux set-option -t "$session" destroy-unattached on
 
 # Set the custom config file location.
 config_file="/usr/share/pcdata.tmux.conf"
