@@ -22,13 +22,16 @@ nocolor='\033[0m'
 
 pcdata_url="https://raw.githubusercontent.com/JediFonseca/pcdata/refs/heads/main/pcdata"
 pcdata_path="/usr/bin/pcdata"
+pcdata_main_url="https://raw.githubusercontent.com/JediFonseca/pcdata/refs/heads/main/pcdata-main"
+pcdata_main_path="/usr/bin/pcdata-main"
 manager_path="/usr/bin/pcdata-manager"
 
 pcdata_update () {
 
 echo -e "${yellow}\nDownloading and installing the new PCData version...${nocolor}"
+wget -q -O "$pcdata_main_path" "$pcdata_main_url" || { echo "Update failed! Check your connection."; exit 1; }
 wget -q -O "$pcdata_path" "$pcdata_url" || { echo "Update failed! Check your connection."; exit 1; }
-chmod +x "$pcdata_path"
+chmod +x "$pcdata_main_path"
 echo -e "${green}\nPCData is updated!\n${nocolor}"
 
 }
@@ -36,6 +39,7 @@ echo -e "${green}\nPCData is updated!\n${nocolor}"
 pcdata_uninstall () {
 
 echo -e "${yellow}\nUninstalling PCData...${nocolor}"
+rm -f "$pcdata_main_path" &> /dev/null
 rm -f "$pcdata_path" &> /dev/null
 rm -f "$manager_path" &> /dev/null
 echo -e "${green}\nPCData is uninstalled!\n${nocolor}"
