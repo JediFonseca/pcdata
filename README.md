@@ -1,3 +1,7 @@
+# ⚠️ Personal Project
+
+PCData was built for my own personal use. The repository is public and anyone is welcome to use, fork, or modify it freely. That said, since this is a hobby project maintained in my spare time, I may not always be able to provide support to third parties. I'll help if I can, but there are no guarantees. Issues and pull requests may go unanswered. Use it as-is, at your own risk.
+
 # PCData
 
 PCData is a simple Bash script that displays detailed system and hardware information directly in the terminal, inspired by the style and organization of tools such as CPU-Z and GPU-Z.
