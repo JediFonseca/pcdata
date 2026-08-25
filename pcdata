@@ -62,6 +62,8 @@ echo -e "dmidecode, lm_sensors, util-linux, xrandr, curl, upower and pciutils. (
 echo
 echo "Version: $version"
 echo
+echo -e "${yellow}Press ENTER to go back to the MENU or CTRL+C to exit.${nocolor}" 
+read -r
 
 }
 
@@ -144,7 +146,12 @@ while true; do
 	tput el
 	echo
 
-	echo -e "\n${yellow}Press CTRL+C to exit.${nocolor}"
+	echo -e "\n${yellow}Press ENTER to go back to the MENU or CTRL+C to exit.${nocolor}" 
+    read -r answer1
+
+    if [[ -z "$answer1" ]]; then
+        break
+    fi
 
 	sleep 1
 done
@@ -351,10 +358,15 @@ while true; do
     [[ -n "$MEMPN05" ]] && echo -e "Slot 05: $MEMPN05${nocolor}"
     [[ -n "$MEMPN06" ]] && echo -e "Slot 06: $MEMPN06${nocolor}"
         
-    echo -e "\n${yellow}Press CTRL+C to exit.${nocolor}"
-        
+    echo -e "\n${yellow}Press ENTER to go back to the MENU or CTRL+C to exit.${nocolor}" 
+    read -r answer2
+
+    if [[ -z "$answer2" ]]; then
+        break
+    fi
+     
     sleep 1
-        
+     
 done
 
 }
@@ -413,7 +425,10 @@ echo "$USBDEV"
 [[ -n "$remote_version" ]] && [[ "$local_version" != "$remote_version" ]] && echo -e \
 "\n${yellow}An update is available! Run 'pcdata --update' to install it.${nocolor}"
 
-echo -e "\n${yellow}Run \"pcdata --help\" for dependencies and more information on how to use it.${nocolor}"
+echo -e "\n${yellow}Run \"pcdata --help\" for dependencies and more information on how to use it.${nocolor}\n"
+
+echo -e "${yellow}Press ENTER to go back to the MENU or CTRL+C to exit.${nocolor}" 
+read -r
 
 }
 
@@ -545,7 +560,12 @@ while true; do
     tput el
     echo
 
-    echo -e "\n${yellow}Press CTRL+C to exit.${nocolor}"
+    echo -e "\n${yellow}Press ENTER to go back to the MENU or CTRL+C to exit.${nocolor}" 
+    read -r answer3
+
+    if [[ -z "$answer3" ]]; then
+        break
+    fi
 
     [[ "$GPUVENDOR" != "INTEL" ]] && sleep 1
 done
@@ -639,7 +659,12 @@ while true; do
     tput el
     echo
 
-    echo -e "\n${yellow}Press CTRL+C to exit.${nocolor}"
+    echo -e "\n${yellow}Press ENTER to go back to the MENU or CTRL+C to exit.${nocolor}" 
+    read -r answer4
+
+    if [[ -z "$answer4" ]]; then
+        break
+    fi
 
     [[ "$GPUVENDOR" != "INTEL" ]] && sleep 1
     
@@ -651,7 +676,16 @@ done
 
 pcdata_update () {
 
-exec sudo /usr/bin/pcdata-manager --update
+clear
+echo -e "${yellow}Do you wish to update PCData to the latest version?${nocolor}"
+echo "Press Y to update or N to go back to the main menu."
+read -p "Y/N: " answer5
+
+if [[ "$answer5" == [Yy] ]]; then
+
+	exec sudo /usr/bin/pcdata-manager --update
+
+fi
 
 }
 
@@ -659,19 +693,53 @@ exec sudo /usr/bin/pcdata-manager --update
 
 pcdata_uninstall () {
 
-exec sudo /usr/bin/pcdata-manager --uninstall
+clear
+echo -e "${yellow}Do you wish to uninstall PCData completely?${nocolor}"
+echo "Press Y to uninstall it or N to go back to the main menu."
+read -p "Y/N: " answer6
+
+if [[ "$answer6" == [Yy] ]]; then
+
+	exec sudo /usr/bin/pcdata-manager --uninstall
+
+fi
 
 }
 
 # Execution ----------------------------------------------------------------------#
 
-case "$1" in
-    "--help")		help_section			;;
-    "--cpu")			cpu_section			;;
-	"--ram")			ram_section			;;
-	"--gpu")			gpu_section			;;
-	"--now")			realtime_section		;;
-	"--update")		pcdata_update		;;
-	"--uninstall")	pcdata_uninstall		;;
-    *)				main_section			;;
-esac
+while true; do
+
+	clear
+	
+	echo -e "${blue}========================= MENU =========================${nocolor}"
+	echo "1) General System Information"
+	echo "2) CPU Information"
+	echo "3) RAM Information"
+	echo "4) GPU Information"
+	echo "5) Realtime Information"
+	echo "6) Help"
+	echo "7) Update PCData"
+	echo "8) Uninstall PCData"
+	echo "0) Sair"
+	echo
+	echo -en "${yellow}Escolha uma opção: ${nocolor}"
+	
+	read -r opcao
+	
+	case "$opcao" in
+		1) main_section 		;;
+    		2) cpu_section		;;
+		3) ram_section		;;
+		4) gpu_section		;;
+		5) realtime_section	;;
+		6) help_section		;;
+		7) pcdata_update		;;
+		8) pcdata_uninstall	;;
+		0) echo ;
+	   	   echo -e "${yellow}Script encerrado!${nocolor}" ;
+	       echo ; exit 0 ;;
+		*) echo -en "${red}\nOpção inválida!\n\n${nocolor}"  ;;
+	esac
+	
+done
