@@ -147,13 +147,12 @@ while true; do
 	echo
 
 	echo -e "\n${yellow}Press ENTER to go back to the MENU or CTRL+C to exit.${nocolor}" 
-    read -r answer1
+    read -r -t 1 answer1
 
     if [[ -z "$answer1" ]]; then
         break
     fi
 
-	sleep 1
 done
 
 }
@@ -359,13 +358,11 @@ while true; do
     [[ -n "$MEMPN06" ]] && echo -e "Slot 06: $MEMPN06${nocolor}"
         
     echo -e "\n${yellow}Press ENTER to go back to the MENU or CTRL+C to exit.${nocolor}" 
-    read -r answer2
+    read -r -t 1 answer2
 
     if [[ -z "$answer2" ]]; then
         break
     fi
-     
-    sleep 1
      
 done
 
@@ -561,13 +558,12 @@ while true; do
     echo
 
     echo -e "\n${yellow}Press ENTER to go back to the MENU or CTRL+C to exit.${nocolor}" 
-    read -r answer3
+    read -r -t 1 answer3
 
     if [[ -z "$answer3" ]]; then
         break
     fi
 
-    [[ "$GPUVENDOR" != "INTEL" ]] && sleep 1
 done
 
 }
@@ -660,13 +656,11 @@ while true; do
     echo
 
     echo -e "\n${yellow}Press ENTER to go back to the MENU or CTRL+C to exit.${nocolor}" 
-    read -r answer4
+    read -r -t 1 answer4
 
     if [[ -z "$answer4" ]]; then
         break
     fi
-
-    [[ "$GPUVENDOR" != "INTEL" ]] && sleep 1
     
 done
 
