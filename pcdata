@@ -147,9 +147,9 @@ while true; do
 	echo
 
 	echo -e "\n${yellow}Press ENTER to go back to the MENU or CTRL+C to exit.${nocolor}" 
-    read -r -t 1 answer1
+    read -r -t 1
 
-    if [[ -z "$answer1" ]]; then
+    if [[ $? -eq 0 ]]; then
         break
     fi
 
@@ -358,9 +358,9 @@ while true; do
     [[ -n "$MEMPN06" ]] && echo -e "Slot 06: $MEMPN06${nocolor}"
         
     echo -e "\n${yellow}Press ENTER to go back to the MENU or CTRL+C to exit.${nocolor}" 
-    read -r -t 1 answer2
+    read -r -t 1
 
-    if [[ -z "$answer2" ]]; then
+    if [[ $? -eq 0 ]]; then
         break
     fi
      
@@ -558,9 +558,9 @@ while true; do
     echo
 
     echo -e "\n${yellow}Press ENTER to go back to the MENU or CTRL+C to exit.${nocolor}" 
-    read -r -t 1 answer3
+    read -r -t 1
 
-    if [[ -z "$answer3" ]]; then
+    if [[ $? -eq 0 ]]; then
         break
     fi
 
@@ -656,9 +656,9 @@ while true; do
     echo
 
     echo -e "\n${yellow}Press ENTER to go back to the MENU or CTRL+C to exit.${nocolor}" 
-    read -r -t 1 answer4
+    read -r -t 1
 
-    if [[ -z "$answer4" ]]; then
+    if [[ $? -eq 0 ]]; then
         break
     fi
     
@@ -673,9 +673,9 @@ pcdata_update () {
 clear
 echo -e "${yellow}Do you wish to update PCData to the latest version?${nocolor}"
 echo "Press Y to update or N to go back to the main menu."
-read -p "Y/N: " answer5
+read -p "Y/N: " answer1
 
-if [[ "$answer5" == [Yy] ]]; then
+if [[ "$answer1" == [Yy] ]]; then
 
 	exec sudo /usr/bin/pcdata-manager --update
 
@@ -690,9 +690,9 @@ pcdata_uninstall () {
 clear
 echo -e "${yellow}Do you wish to uninstall PCData completely?${nocolor}"
 echo "Press Y to uninstall it or N to go back to the main menu."
-read -p "Y/N: " answer6
+read -p "Y/N: " answer2
 
-if [[ "$answer6" == [Yy] ]]; then
+if [[ "$answer2" == [Yy] ]]; then
 
 	exec sudo /usr/bin/pcdata-manager --uninstall
 
