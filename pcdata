@@ -706,7 +706,7 @@ while true; do
 
 	clear
 	
-	echo -e "${blue}========================= MENU =========================${nocolor}"
+	echo -e "${blue}========================= PCData MENU =========================${nocolor}"
 	echo "1) General System Information"
 	echo "2) CPU Information"
 	echo "3) RAM Information"
