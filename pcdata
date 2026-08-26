@@ -706,7 +706,7 @@ while true; do
 
 	clear
 	
-	echo -e "${blue}========================= PCData MENU =========================${nocolor}"
+	echo -e "${blue}===================== PCData MENU =====================${nocolor}"
 	echo "1) General System Information"
 	echo "2) CPU Information"
 	echo "3) RAM Information"
@@ -715,9 +715,9 @@ while true; do
 	echo "6) Help"
 	echo "7) Update PCData"
 	echo "8) Uninstall PCData"
-	echo "0) Sair"
+	echo "0) Exit"
 	echo
-	echo -en "${yellow}Escolha uma opção: ${nocolor}"
+	echo -en "${yellow}Choose an option: ${nocolor}"
 	
 	read -r option
 	
