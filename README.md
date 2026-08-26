@@ -2,6 +2,8 @@
 
 PCData was built for my own personal use. The repository is public and anyone is welcome to use, fork, or modify it freely. That said, since this is a hobby project maintained in my spare time, I may not always be able to provide support to third parties. I'll help if I can, but there are no guarantees. Issues and pull requests may go unanswered. Use it as-is, at your own risk.
 
+**Dual GPU is currently unsupported.**
+
 # PCData
 
 PCData is a simple Bash script that displays detailed system and hardware information directly in the terminal, inspired by the style and organization of tools such as CPU-Z and GPU-Z.
@@ -27,70 +29,24 @@ The installer will:
 
 ### Distribution support
 
-PCData currently supports Debian/Ubuntu-based and Fedora-based systems.
-
-> **Warning:** Arch-based distribution support is still under development.
+PCData currently supports Debian/Ubuntu-based, Arch-based and Fedora-based systems.
 
 ## Usage
 
-Run `pcdata` without any arguments to display general system information:
+Run `pcdata` on a terminal:
 
 ```bash
 pcdata
 ```
 
-### Available options
+## Prints
 
-```bash
-pcdata --help
-```
+<img width="824" height="767" alt="Captura de tela de 2026-08-21 02-15-34" src="https://github.com/user-attachments/assets/0a1cb77c-6939-48fc-9252-6082e64d52dd" />
 
-Displays usage information and the required dependencies.
+<img width="710" height="657" alt="Captura de tela de 2026-08-21 02-15-53" src="https://github.com/user-attachments/assets/1fb5eea8-9e4b-42b2-a3f6-381d93087c5b" />
 
-```bash
-pcdata --cpu
-```
+<img width="710" height="753" alt="Captura de tela de 2026-08-21 02-16-05" src="https://github.com/user-attachments/assets/e4029885-c820-4c15-8cea-99e684d4fa62" />
 
-Displays detailed CPU information, including realtime CPU data.
+<img width="735" height="407" alt="Captura de tela de 2026-08-21 02-16-20" src="https://github.com/user-attachments/assets/28c21315-33b1-45b0-a0c4-f922fd0bc915" />
 
-```bash
-pcdata --ram
-```
-
-Displays detailed RAM information, including information for each memory slot.
-
-```bash
-pcdata --gpu
-```
-
-Displays detailed GPU information and realtime GPU data.
-
-```bash
-pcdata --now
-```
-
-Displays realtime CPU, RAM, swap, and GPU information together.
-
-```bash
-pcdata --update
-```
-
-Updates PCData to the latest available version.
-
-```bash
-pcdata --uninstall
-```
-
-Completely uninstalls PCData.
-
-### Exiting realtime modes
-
-The `--cpu`, `--ram`, `--gpu`, and `--now` modes continuously update the displayed information.
-
-Press:
-
-```bash
-CTRL+C
-```
-
-to exit.
+<img width="611" height="443" alt="Captura de tela de 2026-08-21 02-16-35" src="https://github.com/user-attachments/assets/cf817b99-207d-41ad-816e-975c2c7f141b" />
